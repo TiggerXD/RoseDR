@@ -2,10 +2,10 @@ from ultralytics import YOLO
 from sklearn.metrics import classification_report, confusion_matrix
 import os
 
-model = YOLO("runs/detect/train/weights/best.pt")
+model = YOLO("../RoseDR_model/RoseDR.pt")
 
-test_images = "dataset/test/images"
-test_labels = "dataset/test/labels"
+test_images = "../dataset/test/images"
+test_labels = "../dataset/test/labels"
 
 class_names = [
     "black_spot",
