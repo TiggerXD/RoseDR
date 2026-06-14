@@ -4,6 +4,8 @@ from PIL import Image
 import tempfile
 import os
 
+st.space(50)
+
 st.set_page_config(
     page_title="RoseDR",
     layout="wide"
