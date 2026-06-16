@@ -221,10 +221,32 @@ if uploaded_file is not None:
 
             else:
 
-                best_box = max(
-                    result.boxes,
-                    key=lambda x: float(x.conf)
-                )
+                disease_boxes = []
+
+                for box in result.boxes:
+                    cls_id = int(box.cls.item())
+                    class_name = model.names[cls_id].lower()
+
+                    if class_name != "healthy_leaf":
+                        disease_boxes.append(box)
+
+                if len(disease_boxes) > 0:
+
+                    best_box = max(
+                        disease_boxes,
+                        key=lambda x: float(x.conf)
+                    )
+
+                else:
+
+                    best_box = max(
+                        result.boxes,
+                        key=lambda x: float(x.conf)
+                    )
+
+                disease_id = int(best_box.cls.item())
+                confidence = float(best_box.conf.item())
+                disease_name = model.names[disease_id]
 
                 disease_id = int(best_box.cls.item())
                 confidence = float(best_box.conf.item())
