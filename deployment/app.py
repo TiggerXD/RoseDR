@@ -215,7 +215,7 @@ if uploaded_file is not None:
 
             result = results[0]
 
-            if len(result.boxes) == 0:
+            if len(result.boxes) == 0 or result.boxes[0].conf < 0.8:
 
                 st.warning("No disease detected.")
 
