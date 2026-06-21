@@ -223,8 +223,6 @@ if uploaded_file is not None:
                 disease_boxes = []
 
                 for box in result.boxes:
-                    if box.conf < 0.75:
-                        continue
                     cls_id = int(box.cls.item())
                     class_name = model.names[cls_id].lower()
 
