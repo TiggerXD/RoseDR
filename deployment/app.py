@@ -215,8 +215,7 @@ if uploaded_file is not None:
 
             result = results[0]
 
-            if len(result.boxes) == 0 or result.boxes[0].conf < 0.8:
-
+            if len(result.boxes) == 0 or result.boxes[0].conf < 0.75:
                 st.warning("No disease detected.")
 
             else:
@@ -224,11 +223,10 @@ if uploaded_file is not None:
                 disease_boxes = []
 
                 for box in result.boxes:
+                    if box.conf < 0.75:
+                        continue
                     cls_id = int(box.cls.item())
                     class_name = model.names[cls_id].lower()
-
-                    if class_name != "healthy_leaf":
-                        disease_boxes.append(box)
 
                 if len(disease_boxes) > 0:
 
