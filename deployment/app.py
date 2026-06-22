@@ -295,12 +295,7 @@ if uploaded_file is not None:
             )
 
             with st.spinner("Analyzing image..."):
-            with st.spinner("Analyzing image..."):
 
-                with tempfile.NamedTemporaryFile(
-                    delete=False,
-                    suffix=".jpg"
-                ) as tmp:
                 with tempfile.NamedTemporaryFile(
                     delete=False,
                     suffix=".jpg"
@@ -320,7 +315,6 @@ if uploaded_file is not None:
 
                 st.warning("No disease detected.")
 
-            else:
             else:
 
                 healthy_classes = [
