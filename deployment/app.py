@@ -249,7 +249,6 @@ def is_rose_leaf(image):
 
 uploaded_file = st.file_uploader(
     "Upload a Rose Leaf Image",
-    "Upload a Rose Leaf Image",
     type=["jpg", "jpeg", "png"]
 )
 
