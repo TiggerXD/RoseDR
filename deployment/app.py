@@ -308,12 +308,7 @@ if uploaded_file is not None:
 
             else:
 
-                healthy_classes = [
-                    "healthy",
-                    "healthy_leaf",
-                    "healthy leaves",
-                    "healthy leaf"
-                ]
+                healthy_classes = "healthy_leaf"
 
                 disease_boxes = []
 

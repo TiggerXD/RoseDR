@@ -40,7 +40,7 @@ model.fc = nn.Linear(
 
 model.load_state_dict(
     torch.load(
-        "RoseOrNot_resnet34.pth",
+        "rose_classifier.pth",
         map_location=device
     )
 )

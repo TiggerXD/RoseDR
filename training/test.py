@@ -203,8 +203,6 @@ for image_file in os.listdir(test_images):
         continue
 
     image_path = os.path.join(test_images, image_file)
-
-    label_path = os.path.join(
     label_path = os.path.join(
         test_labels,
         os.path.splitext(image_file)[0] + ".txt"
@@ -304,6 +302,12 @@ recall = recall_score(
 )
 
 f1 = f1_score(
+    y_true,
+    y_pred,
+    average="weighted",
+    zero_division=0
+)
+
 print(
     classification_report(
         y_true,
