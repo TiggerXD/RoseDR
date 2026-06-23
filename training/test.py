@@ -195,8 +195,6 @@ y_pred = []
 
 wrong_count = 0
 
-wrong_count = 0
-
 for image_file in os.listdir(test_images):
 
     if not image_file.lower().endswith((".jpg", ".jpeg", ".png")):
