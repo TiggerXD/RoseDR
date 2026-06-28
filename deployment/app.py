@@ -291,8 +291,7 @@ if uploaded_file is not None:
                     delete=False,
                     suffix=".jpg"
                 ) as tmp:
-
-                    image.save(tmp.name)
+                    
                     image.save(tmp.name)
 
                     results = model(
